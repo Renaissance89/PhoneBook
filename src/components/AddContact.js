@@ -3,17 +3,17 @@ import React from "react";
 class AddContact extends React.Component {
   state = {
     name: "",
-    email: "",
+    number: "",
   };
 
   add = (e) => {
     e.preventDefault();
-    if (this.state.name === "" || this.state.email === "") {
+    if (this.state.name === "" || this.state.number === "") {
       alert("ALl the fields are mandatory!");
       return;
     }
     this.props.addContactHandler(this.state);
-    this.setState({ name: "", email: "" });
+    this.setState({ name: "", number: "" });
     this.props.history.push("/");
   };
   render() {
@@ -32,13 +32,13 @@ class AddContact extends React.Component {
             />
           </div>
           <div className="field">
-            <label>Email</label>
+            <label>number</label>
             <input
               type="text"
-              name="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={(e) => this.setState({ email: e.target.value })}
+              name="number"
+              placeholder="number"
+              value={this.state.number}
+              onChange={(e) => this.setState({ number: e.target.value })}
             />
           </div>
           <button className="ui button blue">Add</button>
