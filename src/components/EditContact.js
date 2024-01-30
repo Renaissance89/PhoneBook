@@ -19,8 +19,7 @@ class EditContact extends React.Component {
     }
     this.props.updateContactHandler(this.state);
     this.setState({ name: "", number: "" });
-    console.log(this.props);
-   this.props.history.push("/");
+    this.props.history.push("/");
   };
   render() {
     return (
@@ -31,7 +30,7 @@ class EditContact extends React.Component {
             <label>Name</label>
             <input
               type="text"
-             name="name"
+              name="name"
               placeholder="Name"
               value={this.state.name}
               onChange={(e) => this.setState({ name: e.target.value })}
